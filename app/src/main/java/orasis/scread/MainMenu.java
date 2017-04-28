@@ -52,8 +52,8 @@ public class MainMenu extends Activity implements View.OnClickListener{
 
         photo = (Button) findViewById(R.id.buttonPhoto);
 
-        autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
-        useFlash = (CompoundButton) findViewById(R.id.use_flash);
+//        autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
+//        useFlash = (CompoundButton) findViewById(R.id.use_flash);
 
         findViewById(R.id.buttonPhoto).setOnClickListener(this);
         Intro.mTts.speak("Press anywhere in the screen to initiate the detection.",  TextToSpeech.QUEUE_FLUSH, null);
