@@ -55,7 +55,20 @@ public class MainMenu extends Activity implements View.OnClickListener{
 //        autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
 //        useFlash = (CompoundButton) findViewById(R.id.use_flash);
 
-        findViewById(R.id.buttonPhoto).setOnClickListener(this);
+        findViewById(R.id.buttonPhoto).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // if (v.getId() == R.id.read_text) {
+                if (v.getId() == R.id.buttonPhoto) {
+                    // launch Ocr capture activity.
+                    Intent intent = new Intent(MainMenu.this, OcrCaptureActivity.class);
+                    intent.putExtra(OcrCaptureActivity.AutoFocus, true);
+                    //intent.putExtra(OcrCaptureActivity.UseFlash, useFlash.isChecked());
+                    Intro.mTts.stop();
+                    startActivityForResult(intent, RC_OCR_CAPTURE);
+                }
+            }
+        });
         Intro.mTts.speak("Press anywhere in the screen to initiate the detection.",  TextToSpeech.QUEUE_FLUSH, null);
     }
 
